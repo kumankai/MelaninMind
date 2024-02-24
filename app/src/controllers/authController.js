@@ -1,5 +1,5 @@
-import hashing from '../helpers/hashing';
-import User from '../models/User';
+import hashing from '../helpers/hashing.js';
+import User from '../models/User.js';
 
 const signup = async (req, res) => {
     const { email, password } = req.body;
@@ -33,7 +33,7 @@ const logout = async (req, res) => {
 
     try {
         const user = await User.logout(userId);
-        return user;
+        res.sttaus(200).json({ user })
     }
     catch (err) {
         console.log(err);
