@@ -46,16 +46,36 @@ function ChatRoom() {
   //   }
   // })();
 
-  (async () => {
+  const testGenerate = async (e) => {
+    e.preventDefault();
     const prediction = await cohere.generate({
         prompt: "hello",
         maxTokens: 10,
     });
     
-    console.log("Received prediction", prediction);
-  })();
+    console.log("Received prediction", prediction.generations[0].text);
+  };
 
-
+  const testChat = async (e) => {
+    e.preventDefault();
+    try {
+      const stream = await cohere.chatStream({
+        model: "command",
+        message: "Tell me a story in 5 parts!",
+      });
+      // for (const message of stream) {
+      //   console.log(message);
+      // }
+      stream.on('data', (chunk) => {
+        // Process each chunk of data
+        console.log('Received chunk:', chunk);
+      });
+      console.log(stream);
+    } catch (error) {
+      console.error("Error occurred:", error);
+    }
+  }
+  
 
 
 
@@ -67,13 +87,14 @@ function ChatRoom() {
         <p>Welcome to the Chat Room!</p>
         <form>
           
-          <button onClick={() => console.log('/chat')}>Send Message</button>
+          <button onClick={testGenerate}>Generate</button>
+          <button onClick={testChat}>Chat</button>
         </form>
         
       </div>
     </div>
   );
-  
+
 }
 
 export default ChatRoom;
