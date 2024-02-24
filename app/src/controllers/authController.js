@@ -6,8 +6,7 @@ const signup = async (req, res) => {
 
     try{
         const hashedPassword = await hashing.hash_password(password);
-        const user = await User.create({ email, password: hashedPassword });
-        
+        const user = await User.create({ email, password: hashedPassword }); 
         res.status(201).json({ message: "Account registered", user });
     }
     catch (err) {
