@@ -6,8 +6,8 @@ const signup = async (req, res) => {
 
     try{
         const hashedPassword = await hashing.hash_password(password);
-        // Create token
         const user = await User.create({ email, password: hashedPassword });
+        
         res.status(201).json({ message: "Account registered", user });
     }
     catch (err) {
@@ -21,7 +21,6 @@ const login = async (req, res) => {
 
     try{
         const user = await User.login(email, password);
-        // Create token
         res.status(200).json({ message: "Account logged in", user });
     }
     catch (err) {
@@ -30,6 +29,19 @@ const login = async (req, res) => {
     }
 }
 
+const logout = async (req, res) => {
+    const { userId } = req.body;
 
-const auth = { signup, login };
+    try {
+        const user = await User.logout(userId);
+        return user;
+    }
+    catch (err) {
+        console.log(err);
+        res.status(400).json({ error: err.message });
+    }
+}
+
+
+const auth = { signup, login, logout };
 export default auth;
