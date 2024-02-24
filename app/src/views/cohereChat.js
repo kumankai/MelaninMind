@@ -58,22 +58,36 @@ function ChatRoom() {
 
   const testChat = async (e) => {
     e.preventDefault();
-    try {
-      const stream = await cohere.chatStream({
-        model: "command",
-        message: "Tell me a story in 5 parts!",
+    // try {
+      const stream = await cohere.chat({
+        
+        message: "Hi, how are you?",
+        stream: false,
+        maxTokens: 50,
       });
-      // for (const message of stream) {
-      //   console.log(message);
-      // }
-      stream.on('data', (chunk) => {
-        // Process each chunk of data
-        console.log('Received chunk:', chunk);
-      });
-      console.log(stream);
-    } catch (error) {
-      console.error("Error occurred:", error);
-    }
+
+      // {
+      //   *         message: "Can you give me a global market overview of solar panels?",
+      //   *         stream: false,
+      //   *         chatHistory: [{
+      //   *                 role: Cohere.ChatMessageRole.Chatbot,
+      //   *                 message: "Hi!"
+      //   *             }, {
+      //   *                 role: Cohere.ChatMessageRole.Chatbot,
+      //   *                 message: "How can I help you today?"
+      //   *             }],
+      //   *         promptTruncation: Cohere.ChatRequestPromptTruncation.Off,
+      //   *         citationQuality: Cohere.ChatRequestCitationQuality.Fast,
+      //   *         temperature: 0.3,
+      //   *         searchOptions: {},
+      //   *         promptOverride: {}
+      //   *     }
+      
+      
+      console.log('chat is: ', stream.text);
+    // } catch (error) {
+      // console.error("Error occurred:", error);
+    // }
   }
   
 
@@ -86,7 +100,7 @@ function ChatRoom() {
       <div>
         <p>Welcome to the Chat Room!</p>
         <form>
-          
+          <input type='text'></input>
           <button onClick={testGenerate}>Generate</button>
           <button onClick={testChat}>Chat</button>
         </form>
