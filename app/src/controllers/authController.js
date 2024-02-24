@@ -20,7 +20,7 @@ const login = async (req, res) => {
 
     try{
         const user = await User.login(email, password);
-        res.status(200).json({ message: "Account logged in", user });
+        res.status(200).json({ message: "Successfully logged in", user });
     }
     catch (err) {
         console.log(err);
@@ -33,7 +33,7 @@ const logout = async (req, res) => {
 
     try {
         const user = await User.logout(userId);
-        res.sttaus(200).json({ user })
+        res.status(200).json({ message: "Successfully logged out", user })
     }
     catch (err) {
         console.log(err);
