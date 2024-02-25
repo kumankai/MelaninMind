@@ -31,6 +31,7 @@ class Login extends Component {
     render() {
         return (
             <div>
+                <img alt='logo'> Logo</img>
                 <h1>Login</h1>
                 <div>
                    <form onSubmit={this.handleSubmit}>
