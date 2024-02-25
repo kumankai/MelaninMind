@@ -19,8 +19,6 @@ function ChatRoom() {
   ];
 
   const [conversation, setConversation] = useState(sampleHistory);
-  
-
 
   const cohere = new CohereClient({
     token: "CmTSYM5W6eTKpPlGPoLxOYrp9SkIu8qmdNSaKaFJ", // env vars not working...
@@ -36,27 +34,8 @@ function ChatRoom() {
         maxTokens: 50,
       });
 
-      // {
-      //   *         message: "Can you give me a global market overview of solar panels?",
-      //   *         stream: false,
-      //   *         chatHistory: [{
-      //   *                 role: Cohere.ChatMessageRole.Chatbot,
-      //   *                 message: "Hi!"
-      //   *             }, {
-      //   *                 role: Cohere.ChatMessageRole.Chatbot,
-      //   *                 message: "How can I help you today?"
-      //   *             }],
-      //   *         promptTruncation: Cohere.ChatRequestPromptTruncation.Off,
-      //   *         citationQuality: Cohere.ChatRequestCitationQuality.Fast,
-      //   *         temperature: 0.3,
-      //   *         searchOptions: {},
-      //   *         promptOverride: {}
-      //   *     }
-      
-      
       console.log('prompt is: ', reply, 'chat is: ', reply.text);
   }
-  
   
   const userSendChat = async (e) => {
     e.preventDefault();
