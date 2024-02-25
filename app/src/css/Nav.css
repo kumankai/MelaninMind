@@ -1,79 +1,43 @@
-nav {
-  position: fixed;
-  left: 0;
-  top: 0;
-  height: 100%;
+#navbarId {
+  background-color: #333; /* dark gray background */
+  position: fixed; /* make the navbar fixed */
+  left: 0; /* align to the left */
+  top: 0; /* align to the top */
+  height: 100%; /* full height */
   width: 200px; /* adjust as needed */
-  background-color: #21988a; /* dark gray background */
-  padding: 20px; /* some padding */
-  box-shadow: 2px 0px 5px rgba(0, 0, 0, 0.1); /* subtle shadow */
-  transition: all 0.3s ease; /* transition for hover effect */
-}
-
-nav ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
   display: flex;
-  flex-direction: column;
-  gap: 20px;
-  height: 100%;
-  overflow: auto;
+  flex-direction: column; /* make the navbar vertical */
+  padding: 10px 0; /* reduced padding top and bottom */
 }
 
-nav ul li {nav {
-  position: fixed;
-  left: 0;
-  top: 0;
-  height: 100%;
-  width: 200px; /* adjust as needed */
-  background-color: #f4f4f4; /* light gray background */
-  padding: 20px; /* some padding */
-  box-shadow: 2px 0px 5px rgba(0, 0, 0, 0.1); /* subtle shadow */
-  transition: all 0.3s ease; /* transition for hover effect */
-}
-
-nav ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
+.navClass {
   display: flex;
-  flex-direction: column;
-  gap: 20px;
-  height: 100%;
-  overflow: auto;
+  flex-direction: column; /* make the links vertical */
+  justify-content: flex-start; /* align links to the top */
+  align-items: center;
+  height: 100%; /* full height */
+  padding-top: 20px; /* add some padding at the top */
 }
 
-nav ul li {
-  margin-bottom: 10px; /* space between list items */
+/* ... rest of your CSS ... */
+
+.navLink {
+  list-style: none; /* remove bullet points */
+  width: 100%; /* take up the full width of the .navClass */
 }
 
-nav ul li a {
-  display: block;
-  color: #333; /* dark gray color */
-  padding: 10px 20px; /* larger padding */
+#homeLink, #scholarLink, #eduLink, #aboutLink, #contactLink {
+  text-align: center; /* center the text */
+  font-size: 1.5em; /* make the text bigger */
+}
+
+.homeCL, .scholarshipCL, .eduCL, .aboutCL, .contactCl {
   text-decoration: none;
-  transition: all 0.3s ease; /* transition for hover effect */
-}
-
-nav ul li a:hover {
-  background-color: #ddd; /* slightly darker gray background on hover */
-  color: #333; /* dark gray color */
-  text-decoration: none;
-}
-  margin-bottom: 10px; /* space between list items */
-}
-
-nav ul li a {
-  display: block;
   color: #fff; /* white color */
-  padding: 10px 20px; /* larger padding */
-  text-decoration: none;
-  transition: all 0.3s ease; /* transition for hover effect */
+  transition: color 0.3s ease, transform 0.3s ease; /* added transition for transform */
 }
 
-nav ul li a:hover {
-  background-color: #444; /* slightly lighter gray background on hover */
-  color: #fff; /* white color */
-  text-decoration: none;
+.homeCL:hover, .scholarshipCL:hover, .eduCL:hover, .aboutCL:hover, .contactCl:hover {
+  color: #f0f0f0; /* slightly lighter gray color on hover */
+  transform: scale(1.1); /* make the text slightly bigger on hover */
 }

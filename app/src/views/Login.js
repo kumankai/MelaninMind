@@ -42,24 +42,24 @@ function Login() {
     };
 
     return (
-        <div className='login'>
+        <div id='loginLog'>
             <h1 className='loginH'>Login</h1>
             <div loginDiv>
-                <form className='form' onSubmit={handleSubmit}>
-                    <div className='email'>
-                        <label htmlFor="email">Email:</label>
-                        <input type="text" id="email" name="email" />
+                <form className='formLogF' onSubmit={handleSubmit}>
+                    <div id='emailLog'>
+                        <label className="emailLoglb" htmlFor="email">Email:</label>
+                        <input type="text" className="emailLog" name="email" />
                     </div>
-                    <div className='password'>
-                        <label htmlFor="password">Password:</label>
-                        <input type="password" id="password" name="password" />
+                    <div id='passwordLog'>
+                        <label className='passLoglb' htmlFor="password">Password:</label>
+                        <input type="password" className="passwordLog" name="password" />
                     </div>
-                    <div className='submit'>
-                        <button type="submit">Login</button>
+                    <div id='submitLog'>
+                        <button className='subLogBtn' type="submit">Login</button>
                     </div>
 
-                    <div className='signupButton'>
-                        <Link to="/Signup">Sign Up</Link>
+                    <div id='signupButton'>
+                        <Link className='signLinkLog' to="/Signup">Sign Up</Link>
                     </div>
                 </form>
             </div>

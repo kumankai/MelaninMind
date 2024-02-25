@@ -48,7 +48,7 @@ function Signup() {
             <h1 className="signUp">Sign Up</h1>
             <form className="signForm" onSubmit={handleSubmit}>
                 <div id="nameSignId">
-                    <label className="namelbl">Name</label>
+                    <label className="namelbl">Name:</label>
                     <input className="nameSign" type="text" name="name" placeholder="Name"/>
                 </div>
                 <div id="emailSignId">                    <label className="emaillbl" for="email">Email:</label>

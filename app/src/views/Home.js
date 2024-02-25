@@ -13,32 +13,32 @@ function HomePage() {
     }, []);
 
     return (
-        <div className="home">
+        <div id="home">
           
             <h1 className="welcome">Welcome {name ? name : ''}</h1>
 
-            <div className="all">
-                <div className="top-row">
-                    <div className="scholar">
-                            <Link  to="/views/Grants">Grants and Scholarships</Link>
+            <div id="all">
+                <div id="top-row">
+                    <div id="scholar">
+                            <Link className="scholarClass" to="/views/Grants">Grants and Scholarships</Link>
                     </div>
 
-                    <div className="research">
-                        <Link  to="/views/Research">Scholarly Articles</Link>
+                    <div id="research">
+                        <Link className="researchClass" to="/views/Research">Scholarly Articles</Link>
                     </div>
-                    <div className="health">
-                        <Link  to="">Mental Health</Link>
+                    <div id="health">
+                        <Link className="healthClass" to="">Mental Health</Link>
                     </div>
                 </div>
-                <div className="bottom-row">
-                    <div className="housing">
-                        <Link  to="/views/">Housing</Link>
+                <div id="bottom-row">
+                    <div id="housing">
+                        <Link className="housingClass" to="/views/">Housing</Link>
                     </div>
-                    <div className="social">
-                        <Link  to="/views/">Social Eats</Link>
+                    <div id="social">
+                        <Link className="socialClass" to="/views/">Social Eats</Link>
                     </div>
-                    <div className="community">
-                        <Link  to="/views/">Find Community</Link>
+                    <div id="community">
+                        <Link className="communityClass" to="/views/">Find Community</Link>
                     </div>
                 </div>
             </div>
