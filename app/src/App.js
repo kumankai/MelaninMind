@@ -7,9 +7,8 @@ import './css/Nav.css';
 import ChatRoom from './views/cohereChat.js';
 import Login from './views/Login.js';
 import Home from './views/Home.js';
-import Nav from './component/Nav.js';
 import Signup from './views/Signup.js';
-import { BrowserRouter as Router, Route, Routes, useLocation } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
 function App() {
 
