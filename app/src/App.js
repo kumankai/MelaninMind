@@ -6,7 +6,7 @@ import './css/Signup.css';
 import ChatRoom from './views/cohereController.js';
 import Login from './views/Login.js';
 import Home from './views/Home.js';
-import Nav from './component/nav.js';
+import Nav from './components/nav.js';
 import Signup from './views/Signup.js';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
