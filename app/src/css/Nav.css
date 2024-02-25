@@ -7,16 +7,20 @@
   width: 200px; /* adjust as needed */
   display: flex;
   flex-direction: column; /* make the navbar vertical */
-  padding: 20px 0; /* increased padding top and bottom */
+  padding: 10px 0; /* reduced padding top and bottom */
 }
 
 .navClass {
+  
   display: flex;
   flex-direction: column; /* make the links vertical */
-  justify-content: space-around; /* distribute links evenly */
+  justify-content: flex-start; /* align links to the top */
   align-items: center;
   height: 100%; /* full height */
+  padding-top: 20px; /* add some padding at the top */
 }
+
+/* ... rest of your CSS ... */
 
 .navLink {
   list-style: none; /* remove bullet points */
