@@ -1,16 +1,16 @@
-import React from 'react';
+import { useState, React } from 'react';
 import { CohereClient } from "cohere-ai";
 
 function ChatRoom() {
-
+  const [conversation, setConversation] = useState([]);
   
 
   const cohere = new CohereClient({
-    token: "CmTSYM5W6eTKpPlGPoLxOYrp9SkIu8qmdNSaKaFJ", 
+    token: "CmTSYM5W6eTKpPlGPoLxOYrp9SkIu8qmdNSaKaFJ", // env vars not working...
   });
 
-
-  const testChat = async (e) => {
+  // Needs to eventually pull last conversation from mongo
+  const initialChat = async (e) => {
     e.preventDefault();
       const reply = await cohere.chat({
         
@@ -54,7 +54,21 @@ function ChatRoom() {
       console.log('prompt is: ', reply, 'chat is: ', reply.text);
   }
   
+  
+  const userSendChat = async (e) => {
+    e.preventDefault();
+    const userMessage = e.target.parentElement.querySelector('input').value
+      const reply = await cohere.chat({
+        message: userMessage,
+        stream: false,
+        chatHistory: [],
+        maxTokens: 150,
+      });
 
+      
+      console.log('prompt is: ', userMessage, 'chat is: ', reply.text);
+  }
+  
 
 
 
@@ -65,7 +79,7 @@ function ChatRoom() {
         <p>Welcome to the Chat Room!</p>
         <form>
           <input type='text'></input>
-          <button onClick={testChat}>Chat</button>
+          <button onClick={userSendChat}>Chat</button>
         </form>
         
       </div>
