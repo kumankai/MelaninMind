@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import { Link } from 'react-router-dom';    
 class Login extends Component {
     handleSubmit = async (event) => {
         event.preventDefault();
@@ -44,6 +44,10 @@ class Login extends Component {
                         </div>
                         <div>
                             <button type="submit">Login</button>
+                        </div>
+
+                        <div>
+                            <Link to="/views/Signup">Sign Up</Link>
                         </div>
                    </form>
                 </div>
