@@ -3,7 +3,7 @@ import './App.css';
 import ChatRoom from './views/cohereController.js';
 import Login from './views/Login.js';
 import Home from './views/Home.js';
-
+import Signup from './views/Signup.js';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
 function App() {
@@ -20,6 +20,7 @@ function App() {
           <Route path="/" element={<Login/>} ></Route>
           <Route path="/home" element={<Home/>} ></Route>
           <Route path="/chat" element={<ChatRoom />} ></Route>
+          <Route path="/signup" element={<Signup />} ></Route>
           
         </Routes>
 
