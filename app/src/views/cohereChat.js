@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { CohereClient } from "cohere-ai";
 import Message from './message.js';
+import Nav from '../component/Nav.js';
 
 function ChatRoom() {
   const sampleHistory = [
@@ -85,6 +86,8 @@ function ChatRoom() {
 
   return (
     <div>
+      <Nav/>
+
       <h1>Chat Room</h1>
       <div>
         <p>Welcome to the Chat Room!</p>

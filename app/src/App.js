@@ -19,7 +19,6 @@ function App() {
     <div className="App">
       <header className="App-header">
       
-        <Nav/>
         <Routes>
           <Route path="/" element={<Login/>} ></Route>
           <Route path="/home" element={<Home/>} ></Route>
