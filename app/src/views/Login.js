@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link, useNavigate } from "react-router-dom";
+import '../css/Login.css';
 
 function Login() {
     const navigate = useNavigate();
@@ -41,24 +42,24 @@ function Login() {
     };
 
     return (
-        <div>
-            <h1>Login</h1>
-            <div>
-                <form onSubmit={handleSubmit}>
-                    <div>
-                        <label htmlFor="email">Email:</label>
-                        <input type="text" id="email" name="email" />
+        <div id='loginLog'>
+            <h1 className='loginH'>Login</h1>
+            <div loginDiv>
+                <form className='formLogF' onSubmit={handleSubmit}>
+                    <div id='emailLog'>
+                        <label className="emailLoglb" htmlFor="email">Email:</label>
+                        <input type="text" className="emailLog" name="email" />
                     </div>
-                    <div>
-                        <label htmlFor="password">Password:</label>
-                        <input type="password" id="password" name="password" />
+                    <div id='passwordLog'>
+                        <label className='passLoglb' htmlFor="password">Password:</label>
+                        <input type="password" className="passwordLog" name="password" />
                     </div>
-                    <div>
-                        <button type="submit">Login</button>
+                    <div id='submitLog'>
+                        <button className='subLogBtn' type="submit">Login</button>
                     </div>
 
-                    <div>
-                        <Link to="/Signup">Sign Up</Link>
+                    <div id='signupButton'>
+                        <Link className='signLinkLog' to="/Signup">Not a member yet? Sign Up</Link>
                     </div>
                 </form>
             </div>
