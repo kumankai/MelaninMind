@@ -60,20 +60,30 @@ function ChatRoom() {
   
   const userSendChat = async (e) => {
     e.preventDefault();
+
+    const updateMessages = (role, message) => {
+      const newConversation = [...conversation];
+      newConversation.push(
+        {
+          role: role,
+          message: message
+        }
+      );
+
+      setConversation(newConversation)
+    };
+
     const userMessage = e.target.parentElement.querySelector('input').value
-      const reply = await cohere.chat({
-        message: userMessage,
-        stream: false,
-        chatHistory: [],
-        maxTokens: 150,
-      });
+    const reply = await cohere.chat({
+      message: userMessage,
+      stream: false,
+      chatHistory: [],
+      maxTokens: 150,
+    });
 
-      
-      console.log('prompt is: ', userMessage, 'chat is: ', reply.text);
+    updateMessages("USER", userMessage);
+    updateMessages("CHATBOT", reply.text);
   }
-  
-
-
 
   return (
     <div>
