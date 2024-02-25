@@ -1,7 +1,9 @@
-import React, { Component } from 'react';
-import { Link } from 'react-router-dom';    
-class Login extends Component {
-    handleSubmit = async (event) => {
+import React from 'react';
+import { Link, useNavigate } from "react-router-dom";
+
+function Login() {
+    const navigate = useNavigate();
+    const handleSubmit = async (event) => {
         event.preventDefault();
         
         const formData = new FormData(event.target);
@@ -21,8 +23,18 @@ class Login extends Component {
                 throw new Error('Login failed');
             }
 
-            //Test
-            console.log('Login successful');
+            const responseData = await response.json();
+            console.log(responseData);
+
+            //Set localstorage
+            const newToken = responseData.user.token;
+            const newName = responseData.user.name;
+            const newEmail = responseData.user.email;
+
+            localStorage.setItem('token', newToken);
+            localStorage.setItem('name', newName);
+            localStorage.setItem('email', newEmail);
+            navigate('/Home');
         } catch (error) {
             console.error('Login error:', error);
         }
@@ -47,14 +59,13 @@ class Login extends Component {
                             <button type="submit">Login</button>
                         </div>
 
-                        <div>
-                            <Link to="/views/Signup">Sign Up</Link>
-                        </div>
-                   </form>
-                </div>
+                    <div>
+                        <Link to="/views/Signup">Sign Up</Link>
+                    </div>
+                </form>
             </div>
-        );
-    }
+        </div>
+    );
 }
 
 export default Login;
