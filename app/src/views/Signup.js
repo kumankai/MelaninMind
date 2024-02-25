@@ -1,6 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-
+import '../css/Signup.css';
 
 function Signup() {
     const navigate = useNavigate();
@@ -44,21 +44,22 @@ function Signup() {
     };
 
     return (
-        <div>
-            <h1>Sign Up</h1>
-            <form onSubmit={handleSubmit}>
-                <div>
-                    <label>Name</label>
-                    <input type="text" name="name" placeholder="Name"/>
-                    <label for="email">Email:</label>
-                    <input type="text" id="email" name="email" placeholder="Email" />
+        <div id="signUpId">
+            <h1 className="signUp">Sign Up</h1>
+            <form className="signForm" onSubmit={handleSubmit}>
+                <div id="nameSignId">
+                    <label className="namelbl">Name:</label>
+                    <input className="nameSign" type="text" name="name" placeholder="Name"/>
                 </div>
-                <div>
-                    <label for="password">Password:</label>
-                    <input type="password" id="password" name="password" placeholder="Password" />
+                <div id="emailSignId">                    <label className="emaillbl" for="email">Email:</label>
+                    <input className="emailSign" type="text" id="email" name="email" placeholder="Email" />
                 </div>
-                <div>
-                    <button type="submit">Signup</button>
+                <div id="passSignId">
+                    <label className='passlbl' for="password">Password:</label>
+                    <input className="passSign" type="password" id="password" name="password" placeholder="Password" />
+                </div>
+                <div id="submitSignId">
+                    <button  className='submitBtn'type="submit">Signup</button>
                 </div>
             </form>
         </div>

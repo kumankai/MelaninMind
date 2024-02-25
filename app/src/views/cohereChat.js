@@ -2,6 +2,7 @@ import { useState, React } from 'react';
 import { CohereClient } from "cohere-ai";
 import Message from './message.js';
 import '../css/Chatbox.css';
+import '../css/cohereChat.css';
 
 function ChatRoom() {
   const [collapsed, setCollapsed] = useState(false);
@@ -81,8 +82,6 @@ function ChatRoom() {
   }
 
   return (
-
-
     <div className={`chat-box ${collapsed ? 'collapsed' : ''}`}>
       <div className="header" onClick={toggleCollapse}>
         <h2>Chat</h2>
@@ -99,7 +98,6 @@ function ChatRoom() {
             <button onClick={userSendChat}>Send</button>
           </form>
         )}
-        
       </div>
     </div>
 

@@ -1,0 +1,51 @@
+#home {
+    background-color: #cfcd43; /* light gray background */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.welcome {
+    color: #333; /* dark gray color */
+    margin-bottom: 90px; /* space below the title */
+}
+
+#all {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 50%; /* adjust as needed */
+    margin: 0 auto; /* center the container */
+}
+
+#top-row, #bottom-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 80px; /* space between the rows */
+}
+
+#scholar, #research, #health, #housing, #social, #community {
+    background-color: #fff; /* white background */
+    padding: 11px;
+    border-radius: 5px; /* rounded corners */
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1); /* subtle shadow */
+    width: 30%; /* adjust as needed */
+    text-align: center; /* center the text */
+}
+
+.scholarClass, .researchClass, .healthClass, .housingClass, .socialClass, .communityClass {
+    text-decoration: none;
+    color: #333; /* dark gray color */
+    font-weight: bold; /* make links bold */
+}
+
+.scholarClass:hover, .researchClass:hover, .healthClass:hover, .housingClass:hover, .socialClass:hover, .communityClass:hover {
+    color: #444; /* slightly darker gray color on hover */
+}
