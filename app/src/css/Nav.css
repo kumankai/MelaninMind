@@ -6,7 +6,6 @@
   height: 100%; /* full height */
   width: 200px; /* adjust as needed */
   display: flex;
-  flex-direction: column; /* make the navbar vertical */
   padding: 10px 0; /* reduced padding top and bottom */
 }
 
@@ -16,16 +15,11 @@
   flex-direction: column; /* make the links vertical */
   justify-content: flex-start; /* align links to the top */
   align-items: center;
-  height: 100%; /* full height */
   padding-top: 20px; /* add some padding at the top */
 }
 
 /* ... rest of your CSS ... */
 
-.navLink {
-  list-style: none; /* remove bullet points */
-  width: 100%; /* take up the full width of the .navClass */
-}
 
 #homeLink, #scholarLink, #eduLink, #aboutLink, #contactLink {
   text-align: center; /* center the text */

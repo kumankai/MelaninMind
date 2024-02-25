@@ -19,7 +19,7 @@ function Nav()  {
                         <NavLink to='/chat' className="scholarshipCL">Scholarships</NavLink>   
                     </div>
                     <div id='eduLink'>
-                        <NavLink to='../cohereChat' className="eduCL">Education</NavLink>    
+                        <NavLink to='/cohereChat' className="eduCL">Education</NavLink>    
                     </div>
                     <div id='aboutLink'>
                         <NavLink  activeClassName="aboutCL">About Us</NavLink> 
