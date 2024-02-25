@@ -92,9 +92,10 @@ function ChatRoom() {
         {conversation.map((item, index) => (
           <Message key={index} sender={item.role} messageText={item.message} />
         ))}
+        <div ref={(el) => { el && el.scrollIntoView({ behavior: 'smooth' }); }}></div>
         <form>
-          <input type='text'></input>
-          <button onClick={userSendChat}>Chat</button>
+          <input type='text' placeholder="Type your message..." className='message-form' ></input>
+          <button onClick={userSendChat}>Send Message</button>
         </form>
       </div>
     </div>
