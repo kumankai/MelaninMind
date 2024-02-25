@@ -1,9 +1,16 @@
 import { useState, React } from 'react';
 import { CohereClient } from "cohere-ai";
 import Message from './message.js';
+import '../css/Chatbox.css';
 import '../css/cohereChat.css';
 
 function ChatRoom() {
+  const [collapsed, setCollapsed] = useState(false);
+  
+  const toggleCollapse = () => {
+    setCollapsed(!collapsed);
+  };
+
   const sampleHistory = [
     {
       role: "USER",
@@ -75,22 +82,25 @@ function ChatRoom() {
   }
 
   return (
-    <div id='chatId'>
-      <h1 className='chatRoom'>Chat Room</h1>
-      <div id='chatInnerid'>
-        <p>Welcome to the Chat Room!</p>
-        <div className='chat-container'>
-          {conversation.map((item, index) => (
-            <Message key={index} sender={item.role} messageText={item.message} />
-          ))}
-        </div>
-        <form className='chatForm'>
-          <input className='chatInput' type='text'></input>
-          <button className='chatButton' onClick={userSendChat}>Chat</button>
-        </form>
-        
+    <div className={`chat-box ${collapsed ? 'collapsed' : ''}`}>
+      <div className="header" onClick={toggleCollapse}>
+        <h2>Chat</h2>
+        <span>{collapsed ? '▼' : '▲'}</span>
+      </div>
+      <div className="messages">
+        {conversation.map((item, index) => (
+          <Message className="message" key={index} sender={item.role} messageText={item.message} />
+        ))}
+        <div ref={(el) => { el && el.scrollIntoView({ behavior: 'smooth' }); }}></div>
+        {!collapsed && (
+          <form className='message-form'>
+            <input type='text' placeholder="Type your message..."  ></input>
+            <button onClick={userSendChat}>Send</button>
+          </form>
+        )}
       </div>
     </div>
+
   );
 
 }
