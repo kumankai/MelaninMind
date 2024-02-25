@@ -1,5 +1,6 @@
 import React,{ useState, useEffect } from "react";
 import { Link } from 'react-router-dom';
+import Nav from '../component/Nav.js';
 
 function HomePage() {
     const [name, setName] = useState('');
@@ -13,13 +14,15 @@ function HomePage() {
 
     return (
         <div>
+            <Nav/>
+
             <h1>Welcome {name ? name : ''}</h1>
             <div className="scholar">
                     <Link  to="/views/Grants">Grants and Scholarships</Link>
             </div>
 
             <div className="research">
-                <Link  to="/views/Research">Educational Papers</Link>
+                <Link  to="/views/Research">Scholarly Articles</Link>
             </div>
             <div className="health">
                 <Link  to="">Mental Health</Link>

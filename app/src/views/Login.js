@@ -58,7 +58,7 @@ function Login() {
                     </div>
 
                     <div>
-                        <Link to="/views/Signup">Sign Up</Link>
+                        <Link to="/Signup">Sign Up</Link>
                     </div>
                 </form>
             </div>
