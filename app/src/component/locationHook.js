@@ -4,7 +4,7 @@ function useLocationExclude (excludePaths){
     const location = useLocation();
     const isExcluded = excludePaths.includes(location.pathname);
 
-    return {...location, isExcluded}
+    return {pathname: location, isExcluded}
 } 
 
 export default useLocationExclude;

@@ -2,16 +2,19 @@
     background-color: #cfcd43; /* light gray background */
     display: flex;
     flex-direction: column;
-    justify-content: center;
+   
     align-items: center;
     height: 100vh;
     margin: 0;
     font-family: Arial, sans-serif;
+    
 }
 
 .loginH {
-    color: #333; /* dark gray color */
-    margin-bottom: 20px; /* space below the title */
+    
+    display: inline-block;
+    vertical-align: middle;
+
 }
 
 
@@ -68,4 +71,17 @@
 .signLinkLog:hover {
     background-color: #444; /* slightly darker gray background on hover */
     color: #fff; /* white color */
+}
+
+.imgMelanin {
+     
+    width: 300px; /* adjust as needed */
+    height: 300px; /* adjust as needed */
+    display: inline-block;
+    vertical-align: middle;
+}
+
+#imageLog {
+    display: inline-block;
+    vertical-align: middle;
 }

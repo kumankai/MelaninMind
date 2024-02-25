@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link, useNavigate } from "react-router-dom";
 import '../css/Login.css';
-
+import melaninLogo from '../images/melaninlogo.png';
 function Login() {
     const navigate = useNavigate();
     const handleSubmit = async (event) => {
@@ -43,11 +43,11 @@ function Login() {
 
     return (
         <div id='loginLog'>
-            <div>
-                <image  alt="" src="/images/melaninlogo.png"></image>
+            <div id='imageLog'>
+            <img className="imgMelanin" src={melaninLogo} alt=""/>
             </div>
             <h1 className='loginH'>Login</h1>
-            <div loginDiv>
+            <div classname="loginDiv">
                 <form className='formLogF' onSubmit={handleSubmit}>
                     <div id='emailLog'>
                         <label className="emailLoglb" htmlFor="email">Email:</label>
