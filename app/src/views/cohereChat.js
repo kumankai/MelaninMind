@@ -40,14 +40,10 @@ function ChatRoom() {
   const userSendChat = async (e) => {
     e.preventDefault();
 
-    const updateMessages = (role, message) => {
+    const updateMessages = (user, bot) => {
       const newConversation = [...conversation];
-      newConversation.push(
-        {
-          role: role,
-          message: message
-        }
-      );
+      newConversation.push(user);
+      newConversation.push(bot);
 
       setConversation(newConversation)
     };
@@ -60,8 +56,21 @@ function ChatRoom() {
       maxTokens: 150,
     });
 
-    updateMessages("USER", userMessage);
-    updateMessages("CHATBOT", reply.text);
+    const userObj ={
+      role: "USER",
+      message: userMessage
+    };
+    
+    const chatbotObj = {
+        role: "CHATBOT",
+        message: reply.text
+    };
+
+    console.log(userMessage)
+
+    updateMessages(userObj, chatbotObj);
+
+    console.log(conversation)
   }
 
   return (
