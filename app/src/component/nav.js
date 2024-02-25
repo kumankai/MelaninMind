@@ -5,9 +5,9 @@ class Nav extends Component {
         return (
            <nav>
                 <ul>
-                    <li><a href="/">Home</a></li>
-                    <li><a href="/about">About</a></li>
-                    <li><a href="/contact">Contact</a></li>
+                    <li>  <Link to="/views/Home">Home</Link>  </li>
+                    <li> <Link>About Us</Link> </li>
+                    <li> <Link>Contacts</Link> </li>
                 </ul>
 
            </nav>
