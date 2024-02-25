@@ -1,8 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-function Signup() {
-  return (
+class Signup  extends Component() {
+  render() {
+    return (
     <div>
         <form>
             <div>
@@ -21,6 +22,7 @@ function Signup() {
         </form>
     </div>
   );
+    }
 }
 
 export default Signup;
