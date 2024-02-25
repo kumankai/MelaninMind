@@ -1,5 +1,6 @@
 import { useState, React } from 'react';
 import { CohereClient } from "cohere-ai";
+import Message from './message.js';
 
 function ChatRoom() {
   const sampleHistory = [
@@ -29,7 +30,6 @@ function ChatRoom() {
   const initialChat = async (e) => {
     e.preventDefault();
       const reply = await cohere.chat({
-        
         message: "You are a chatbot greeting the user. In a friendly and extremely concise way, mention your last conversation together, if there was one.",
         stream: false,
         chatHistory: sampleHistory,
@@ -80,6 +80,11 @@ function ChatRoom() {
       <h1>Chat Room</h1>
       <div>
         <p>Welcome to the Chat Room!</p>
+        <div className='chat-container'>
+          {conversation.map((item, index) => (
+            <Message key={index} sender={item.role} messageText={item.message} />
+          ))}
+        </div>
         <form>
           <input type='text'></input>
           <button onClick={userSendChat}>Chat</button>
