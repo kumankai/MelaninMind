@@ -14,14 +14,8 @@
     margin-bottom: 20px; /* space below the title */
 }
 
-.loginDiv form {
-    background-color: #fff; /* white background */
-    padding: 20px;
-    border-radius: 5px; /* rounded corners */
-    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1); /* subtle shadow */
-    width: 300px; /* adjust as needed */
-    border: 1px solid #ccc; /* light gray border */
-}
+
+   
 
 #emailLog, #passwordLog {
     margin-bottom: 10px;
@@ -35,12 +29,14 @@
 
 .emailLog, .passwordLog {
     width: 100%;
+    max-width: 1000px; /* increased max-width */
+    margin-left: auto; /* center the text input */
+    margin-right: auto; /* center the text input */
     padding: 10px;
-    border-radius: 5px; /* rounded corners */
-    border: 1px solid #ccc; /* light gray border */
+    border-radius: 20px; /* rounded corners */
+    border: 3px solid #846149; /* light gray border */
     box-sizing: border-box; /* include padding and border in element's total width and height */
 }
-
 .subLogBtn {
     width: 100%;
     padding: 10px;
@@ -57,20 +53,19 @@
 }
 
 #signupButton {
-    margin-top: 10px;
+    margin-top: 15px;
     text-align: center;
 }
 
 .signLinkLog {
-    display: inline-block;
-    padding: 10px 70px;
-    background-color: #333; /* dark gray background */
-    color: #fff; /* white color */
-    border-radius: 5px; /* rounded corners */
-    text-decoration: none;
+   
+    padding: 10px 90px;
+    color: #000000; /* white color */
+    font-weight: bold; /* make button text bold */
     transition: background-color 0.3s ease; /* transition for hover effect */
 }
 
 .signLinkLog:hover {
     background-color: #444; /* slightly darker gray background on hover */
+    color: #fff; /* white color */
 }

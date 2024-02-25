@@ -20,7 +20,7 @@ function HomePage() {
             <div id="all">
                 <div id="top-row">
                     <div id="scholar">
-                            <Link className="scholarClass" to="/views/Grants">Grants and Scholarships</Link>
+                            <Link className="scholarClass" to="/chat">Grants and Scholarships</Link>
                     </div>
 
                     <div id="research">

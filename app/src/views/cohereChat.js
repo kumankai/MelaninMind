@@ -1,6 +1,7 @@
 import { useState, React } from 'react';
 import { CohereClient } from "cohere-ai";
 import Message from './message.js';
+import '../css/cohereChat.css';
 
 function ChatRoom() {
   const sampleHistory = [

@@ -59,7 +59,7 @@ function Login() {
                     </div>
 
                     <div id='signupButton'>
-                        <Link className='signLinkLog' to="/Signup">Sign Up</Link>
+                        <Link className='signLinkLog' to="/Signup">Not a member yet? Sign Up</Link>
                     </div>
                 </form>
             </div>

@@ -16,7 +16,7 @@ function Nav()  {
                         <NavLink  to="/Home" className="homeCL">Home</NavLink>   
                     </div>
                     <div id='scholarLink'>
-                        <NavLink to='/views/Grants' className="scholarshipCL">Scholarships</NavLink>   
+                        <NavLink to='/chat' className="scholarshipCL">Scholarships</NavLink>   
                     </div>
                     <div id='eduLink'>
                         <NavLink to='../cohereChat' className="eduCL">Education</NavLink>    
