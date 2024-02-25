@@ -46,11 +46,11 @@ function Login() {
             <div>
                 <form onSubmit={handleSubmit}>
                     <div>
-                        <label for="email">Email:</label>
+                        <label htmlFor="email">Email:</label>
                         <input type="text" id="email" name="email" />
                     </div>
                     <div>
-                        <label for="password">Password:</label>
+                        <label htmlFor="password">Password:</label>
                         <input type="password" id="password" name="password" />
                     </div>
                     <div>

@@ -1,6 +1,5 @@
-
-import './App.css';  
-import ChatRoom from './views/cohereController.js';
+import './App.css';
+import ChatRoom from './views/cohereChat.js';
 import Login from './views/Login.js';
 import Home from './views/Home.js';
 import Signup from './views/Signup.js';
@@ -11,7 +10,7 @@ function App() {
     <Router>
     <div className="App">
       <header className="App-header">
-        
+      
        
 
         
