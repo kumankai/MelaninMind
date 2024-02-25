@@ -5,7 +5,6 @@ import Login from './views/Login.js';
 import Home from './views/Home.js';
 import Signup from './views/Signup.js';
 import Nav from './component/nav.js';
-import Nav from './component/nav.js';
 import { BrowserRouter as Router, Route, Routes} from 'react-router-dom';
 
 
@@ -19,6 +18,7 @@ function App() {
               
               <Routes>
                 <Route path="/" element={<Login />} />
+                <Route path="/signup" element={<Signup/>} />
                 <Route path="/home" element={ <> <Nav/> <Home /> </> } />
                 <Route path="/chat" element={<ChatRoom />} />
                 

@@ -87,18 +87,18 @@ function ChatRoom() {
     token: "CmTSYM5W6eTKpPlGPoLxOYrp9SkIu8qmdNSaKaFJ", // env vars not working...
   });
 
-  // Needs to eventually pull last conversation from mongo
-  const initialChat = async (e) => {
-    e.preventDefault();
-      const reply = await cohere.chat({
-        message: "You are a chatbot greeting the user. In a friendly and extremely concise way, mention your last conversation together, if there was one.",
-        stream: false,
-        chatHistory: conversations[0].conversation,
-        maxTokens: 50,
-      });
-
-      console.log('prompt is: ', reply, 'chat is: ', reply.text);
-  }
+    // Needs to eventually pull last conversation from mongo
+    // const initialChat = async (e) => {
+    //   e.preventDefault();
+    //     const reply = await cohere.chat({
+    //       message: "You are a chatbot greeting the user. In a friendly and extremely concise way, mention your last conversation together, if there was one.",
+    //       stream: false,
+    //       chatHistory: conversations[0].conversation,
+    //       maxTokens: 50,
+    //     });
+  
+    //     console.log('prompt is: ', reply, 'chat is: ', reply.text);
+    // }
   
   const userSendChat = async (e) => {
     e.preventDefault();
