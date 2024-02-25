@@ -2,11 +2,11 @@ import hashing from '../helpers/hashing.js';
 import User from '../models/User.js';
 
 const signup = async (req, res) => {
-    const { email, password } = req.body;
+    const { email, name, password } = req.body;
 
     try{
         const hashedPassword = await hashing.hash_password(password);
-        const user = await User.create({ email, password: hashedPassword }); 
+        const user = await User.create({ email, name, password: hashedPassword }); 
         res.status(201).json({ message: "Account registered", user });
     }
     catch (err) {
