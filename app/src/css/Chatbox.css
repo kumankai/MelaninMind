@@ -1,0 +1,29 @@
+.chat-box {
+    width: 300px;
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    overflow-y: auto;
+  }
+  
+  .header {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    cursor: pointer;
+    background-color: #ddd;
+  }
+  
+  .messages {
+    padding: 10px;
+  }
+  
+  .message {
+    padding: 5px;
+    margin-bottom: 5px;
+    background-color: #e0e0e0;
+  }
+  
+  .collapsed .messages {
+    display: none;
+  }
+  

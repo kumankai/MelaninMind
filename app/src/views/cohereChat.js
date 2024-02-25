@@ -1,8 +1,15 @@
 import { useState, React } from 'react';
 import { CohereClient } from "cohere-ai";
 import Message from './message.js';
+import '../css/Chatbox.css';
 
 function ChatRoom() {
+  const [collapsed, setCollapsed] = useState(false);
+  
+  const toggleCollapse = () => {
+    setCollapsed(!collapsed);
+  };
+
   const sampleHistory = [
     {
       role: "USER",
@@ -74,22 +81,24 @@ function ChatRoom() {
   }
 
   return (
-    <div>
-      <h1>Chat Room</h1>
-      <div>
-        <p>Welcome to the Chat Room!</p>
-        <div className='chat-container'>
-          {conversation.map((item, index) => (
-            <Message key={index} sender={item.role} messageText={item.message} />
-          ))}
-        </div>
+
+
+    <div className={`chat-box ${collapsed ? 'collapsed' : ''}`}>
+      <div className="header" onClick={toggleCollapse}>
+        <h2>Chat</h2>
+        <span>{collapsed ? '▼' : '▲'}</span>
+      </div>
+      <div className="messages">
+        {conversation.map((item, index) => (
+          <Message key={index} sender={item.role} messageText={item.message} />
+        ))}
         <form>
           <input type='text'></input>
           <button onClick={userSendChat}>Chat</button>
         </form>
-        
       </div>
     </div>
+
   );
 
 }

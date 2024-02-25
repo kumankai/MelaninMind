@@ -1,6 +1,6 @@
 import React,{ useState, useEffect } from "react";
 import { Link } from 'react-router-dom';
-import Nav from '../component/Nav.js';
+import Nav from '../component/nav.js';
 
 function HomePage() {
     const [name, setName] = useState('');
