@@ -50,10 +50,15 @@ function ChatRoom() {
   const userSendChat = async (e) => {
     e.preventDefault();
 
-    if (!userInput.trim()) return; // Skip if the input is empty or whitespace
+    const updateMessages = (user, bot) => {
+      const newConversation = [...conversation];
+      newConversation.push(user);
+      newConversation.push(bot);
 
-    updateMessages('USER', userInput);
+      setConversation(newConversation)
+    };
 
+    const userMessage = e.target.parentElement.querySelector('input').value
     const reply = await cohere.chat({
       message: userInput,
       stream: false,
@@ -61,10 +66,22 @@ function ChatRoom() {
       maxTokens: 150,
     });
 
-    updateMessages('CHATBOT', reply.text);
+    const userObj ={
+      role: "USER",
+      message: userMessage
+    };
+    
+    const chatbotObj = {
+        role: "CHATBOT",
+        message: reply.text
+    };
 
-    setUserInput(''); // Clear user input after sending the message
-  };
+    console.log(userMessage)
+
+    updateMessages(userObj, chatbotObj);
+
+    console.log(conversation)
+  }
 
   return (
     <div>
