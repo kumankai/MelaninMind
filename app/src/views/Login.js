@@ -40,7 +40,7 @@ function Login() {
         }
     };
 
-    render() {
+   
         return (
             <div>
                 <img alt='logo'> Logo</img>
@@ -66,6 +66,7 @@ function Login() {
             </div>
         </div>
     );
+  
 }
 
 export default Login;
