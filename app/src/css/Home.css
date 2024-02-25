@@ -1,0 +1,76 @@
+.home {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #cfcd43; /* light gray background */
+    padding: 20px; /* some padding */
+}
+
+h1 {
+    text-align: center;
+    color: #333; /* dark gray color */
+    font-size: 2em; /* larger font size */
+    margin-bottom: 50px; /* space below the title */
+}
+
+.scholar, .research, .health, .housing, .social, .community {
+    display: inline-flex;
+    border: 2px solid #333; /* thicker, dark gray border */
+    padding: 20px 30px; /* larger padding */
+    text-align: center;
+    flex: 1 0 auto;
+    margin: 25px;
+    cursor: pointer;
+    background-color: #cfcd43;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1); /* subtle shadow */
+    transition: all 0.3s ease; /* transition for hover effect */
+}
+
+.scholar:hover, .research:hover, .health:hover, .housing:hover, .social:hover, .community:hover {
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2); /* larger shadow on hover */
+    transform: translateY(-5px); /* move up on hover */
+}
+
+.top-row, .bottom-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 50px;
+}
+
+.group {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.all {
+    margin-top: 1%;
+}
+
+/* Unique styles for each button */
+.scholar {
+    background-color: #f8b24f;
+}
+
+.research {
+    background-color: #f88454;
+}
+
+.health {
+    background-color: #f84f54;
+}
+
+.housing {
+    background-color: #f8548c;
+}
+
+.social {
+    background-color: #8c54f8;
+}
+
+.community {
+    background-color: #548cf8;
+}

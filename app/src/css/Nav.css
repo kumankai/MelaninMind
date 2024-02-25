@@ -1,3 +1,79 @@
 nav {
-    
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 200px; /* adjust as needed */
+  background-color: #21988a; /* dark gray background */
+  padding: 20px; /* some padding */
+  box-shadow: 2px 0px 5px rgba(0, 0, 0, 0.1); /* subtle shadow */
+  transition: all 0.3s ease; /* transition for hover effect */
+}
+
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  height: 100%;
+  overflow: auto;
+}
+
+nav ul li {nav {
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 200px; /* adjust as needed */
+  background-color: #f4f4f4; /* light gray background */
+  padding: 20px; /* some padding */
+  box-shadow: 2px 0px 5px rgba(0, 0, 0, 0.1); /* subtle shadow */
+  transition: all 0.3s ease; /* transition for hover effect */
+}
+
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  height: 100%;
+  overflow: auto;
+}
+
+nav ul li {
+  margin-bottom: 10px; /* space between list items */
+}
+
+nav ul li a {
+  display: block;
+  color: #333; /* dark gray color */
+  padding: 10px 20px; /* larger padding */
+  text-decoration: none;
+  transition: all 0.3s ease; /* transition for hover effect */
+}
+
+nav ul li a:hover {
+  background-color: #ddd; /* slightly darker gray background on hover */
+  color: #333; /* dark gray color */
+  text-decoration: none;
+}
+  margin-bottom: 10px; /* space between list items */
+}
+
+nav ul li a {
+  display: block;
+  color: #fff; /* white color */
+  padding: 10px 20px; /* larger padding */
+  text-decoration: none;
+  transition: all 0.3s ease; /* transition for hover effect */
+}
+
+nav ul li a:hover {
+  background-color: #444; /* slightly lighter gray background on hover */
+  color: #fff; /* white color */
+  text-decoration: none;
 }

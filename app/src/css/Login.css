@@ -1,15 +1,88 @@
-body {
-    background-color: #cfcd43;
-    color: rgb(0, 0, 0);
-}
-
-form {
-   
+.login {
+    background-color: #cfcd43; /* keep the current background color */
     display: flex;
     flex-direction: column;
-    align-items: center;
     justify-content: center;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.login h1 {
+    color: #333; /* dark gray color */
+    margin-bottom: 20px; /* space below the title */
+}
+
+.login form {
+    background-color: #fff; /* white background */
+    padding: 20px;
+    border-radius: 5px; /* rounded corners */
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1); /* subtle shadow */
+    width: 300px; /* adjust as needed */
+}
+
+.login form div {
+    margin-bottom: 10px;
+}
+
+.login form label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.login form input[type="text"],
+.login form input[type="password"] {
+    width: 90%;
+    padding: 10px;
+    border-radius: 5px; /* rounded corners */
+    border: 1px solid #ccc; /* light gray border */
+}
+
+.login form button {
+    width: 100%;
+    padding: 10px;
+    background-color: #333; /* dark gray background */
+    color: #fff; /* white color */
+    border: none;
+    border-radius: 5px; /* rounded corners */
+    cursor: pointer;
+}
+
+.login form button:hover {
+    background-color: #444; /* slightly darker gray background on hover */
+}
+
+.login form .signup {
+    margin-top: 10px;
+    text-align: center;
+}
+
+.login form .signup a {
+    color: #ffffff; /* dark gray color */
+    text-decoration: none;
+}
+
+.login form .signup a:hover {
+    text-decoration: underline;
+}
+
+.login .signup {
+    margin-top: 10px;
+    text-align: center;
+}
+
+.login .signup a {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #333; /* dark gray background */
+    color: #fff; /* white color */
+    border-radius: 5px; /* rounded corners */
+    text-decoration: none;
+    transition: background-color 0.3s ease; /* transition for hover effect */
+}
+
+.login .signup a:hover {
+    background-color: #d2b3b3; /* slightly darker gray background on hover */
+    color: black;
 }

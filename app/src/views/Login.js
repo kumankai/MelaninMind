@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link, useNavigate } from "react-router-dom";
+import '../css/Login.css';
 
 function Login() {
     const navigate = useNavigate();
@@ -41,23 +42,23 @@ function Login() {
     };
 
     return (
-        <div>
-            <h1>Login</h1>
-            <div>
-                <form onSubmit={handleSubmit}>
-                    <div>
+        <div className='login'>
+            <h1 className='loginH'>Login</h1>
+            <div loginDiv>
+                <form className='form' onSubmit={handleSubmit}>
+                    <div className='email'>
                         <label htmlFor="email">Email:</label>
                         <input type="text" id="email" name="email" />
                     </div>
-                    <div>
+                    <div className='password'>
                         <label htmlFor="password">Password:</label>
                         <input type="password" id="password" name="password" />
                     </div>
-                    <div>
+                    <div className='submit'>
                         <button type="submit">Login</button>
                     </div>
 
-                    <div>
+                    <div className='signupButton'>
                         <Link to="/Signup">Sign Up</Link>
                     </div>
                 </form>

@@ -1,9 +1,5 @@
 
 import './App.css';  
-import './css/Login.css';
-import './css/Home.css';
-import './css/Signup.css';
-import './css/Nav.css';
 import ChatRoom from './views/cohereChat.js';
 import Login from './views/Login.js';
 import Home from './views/Home.js';
