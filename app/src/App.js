@@ -12,25 +12,29 @@ import Signup from './views/Signup.js';
 import { BrowserRouter as Router, Route, Routes, useLocation } from 'react-router-dom';
 
 function App() {
-
+  const excludedPaths = ["/", "/signup"]; // paths where you don't want to show the Nav
 
   return (
     <Router>
-    <div className="App">
-      <header className="App-header">
-      
-        <Nav/>
-        <Routes>
-          <Route path="/" element={<Login/>} ></Route>
-          <Route path="/home" element={<Home/>} ></Route>
-          <Route path="/chat" element={<ChatRoom />} ></Route>
-          <Route path="/signup" element={<Signup />} ></Route>
-          
-        </Routes>
+      {/* Anonymous function to use the useLocation hook */}
+      {() => {
+        const location = useLocation();
 
-       
-      </header>
-    </div>
+        return (
+          <div className="App">
+            <header className="App-header">
+              {/* Conditionally render the Nav component */}
+              {excludedPaths.includes(location.pathname) ? null : <Nav />}
+              <Routes>
+                <Route path="/" element={<Login />} />
+                <Route path="/home" element={<Home />} />
+                <Route path="/chat" element={<ChatRoom />} />
+                <Route path="/signup" element={<Signup />} />
+              </Routes>
+            </header>
+          </div>
+        );
+      }}
     </Router>
   );
 }
