@@ -1,0 +1,31 @@
+body {
+    background-color: #cfcd43;
+}
+
+#chatId {
+    margin-top: 150px;
+}
+
+.chatForm {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-top: 100px;
+    max-width: 600px; /* adjust as needed */
+    margin: auto;
+    padding: 20px;
+}
+
+.chatInput {
+    flex-grow: 1; /* allow the input to take up the remaining space */
+    padding: 10px;
+    font-size: 1.2em; /* make the text bigger */
+    margin-right: 2px; /* add some space between the input and the button */
+}
+
+.chatButton {
+    padding: 10px 20px; /* make the button bigger */
+    font-size: 1.2em; /* make the text bigger */
+    cursor: pointer;
+}

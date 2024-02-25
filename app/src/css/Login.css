@@ -1,15 +1,71 @@
-body {
-    background-color: #cfcd43;
-    color: rgb(0, 0, 0);
-}
-
-form {
-   
+#loginLog {
+    background-color: #cfcd43; /* light gray background */
     display: flex;
     flex-direction: column;
-    align-items: center;
     justify-content: center;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.loginH {
+    color: #333; /* dark gray color */
+    margin-bottom: 20px; /* space below the title */
+}
+
+
+   
+
+#emailLog, #passwordLog {
+    margin-bottom: 10px;
+}
+
+.emailLoglb, .passLoglb {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold; /* make labels bold */
+}
+
+.emailLog, .passwordLog {
+    width: 100%;
+    max-width: 1000px; /* increased max-width */
+    margin-left: auto; /* center the text input */
+    margin-right: auto; /* center the text input */
+    padding: 10px;
+    border-radius: 20px; /* rounded corners */
+    border: 3px solid #846149; /* light gray border */
+    box-sizing: border-box; /* include padding and border in element's total width and height */
+}
+.subLogBtn {
+    width: 100%;
+    padding: 10px;
+    background-color: #333; /* dark gray background */
+    color: #fff; /* white color */
+    border: none;
+    border-radius: 5px; /* rounded corners */
+    cursor: pointer;
+    font-weight: bold; /* make button text bold */
+}
+
+.subLogBtn:hover {
+    background-color: #444; /* slightly darker gray background on hover */
+}
+
+#signupButton {
+    margin-top: 15px;
+    text-align: center;
+}
+
+.signLinkLog {
+   
+    padding: 10px 90px;
+    color: #000000; /* white color */
+    font-weight: bold; /* make button text bold */
+    transition: background-color 0.3s ease; /* transition for hover effect */
+}
+
+.signLinkLog:hover {
+    background-color: #444; /* slightly darker gray background on hover */
+    color: #fff; /* white color */
 }

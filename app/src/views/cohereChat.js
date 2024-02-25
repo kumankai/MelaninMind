@@ -1,6 +1,7 @@
 import { useState, React } from 'react';
 import { CohereClient } from "cohere-ai";
 import Message from './message.js';
+import '../css/cohereChat.css';
 
 function ChatRoom() {
   const sampleHistory = [
@@ -74,18 +75,18 @@ function ChatRoom() {
   }
 
   return (
-    <div>
-      <h1>Chat Room</h1>
-      <div>
+    <div id='chatId'>
+      <h1 className='chatRoom'>Chat Room</h1>
+      <div id='chatInnerid'>
         <p>Welcome to the Chat Room!</p>
         <div className='chat-container'>
           {conversation.map((item, index) => (
             <Message key={index} sender={item.role} messageText={item.message} />
           ))}
         </div>
-        <form>
-          <input type='text'></input>
-          <button onClick={userSendChat}>Chat</button>
+        <form className='chatForm'>
+          <input className='chatInput' type='text'></input>
+          <button className='chatButton' onClick={userSendChat}>Chat</button>
         </form>
         
       </div>

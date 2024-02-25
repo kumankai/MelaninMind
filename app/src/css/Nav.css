@@ -1,3 +1,44 @@
-nav {
-    
+#navbarId {
+  background-color: #333; /* dark gray background */
+  position: fixed; /* make the navbar fixed */
+  left: 0; /* align to the left */
+  top: 0; /* align to the top */
+  height: 100%; /* full height */
+  width: 200px; /* adjust as needed */
+  display: flex;
+  flex-direction: column; /* make the navbar vertical */
+  padding: 10px 0; /* reduced padding top and bottom */
+}
+
+.navClass {
+  
+  display: flex;
+  flex-direction: column; /* make the links vertical */
+  justify-content: flex-start; /* align links to the top */
+  align-items: center;
+  height: 100%; /* full height */
+  padding-top: 20px; /* add some padding at the top */
+}
+
+/* ... rest of your CSS ... */
+
+.navLink {
+  list-style: none; /* remove bullet points */
+  width: 100%; /* take up the full width of the .navClass */
+}
+
+#homeLink, #scholarLink, #eduLink, #aboutLink, #contactLink {
+  text-align: center; /* center the text */
+  font-size: 1.5em; /* make the text bigger */
+}
+
+.homeCL, .scholarshipCL, .eduCL, .aboutCL, .contactCl {
+  text-decoration: none;
+  color: #fff; /* white color */
+  transition: color 0.3s ease, transform 0.3s ease; /* added transition for transform */
+}
+
+.homeCL:hover, .scholarshipCL:hover, .eduCL:hover, .aboutCL:hover, .contactCl:hover {
+  color: #f0f0f0; /* slightly lighter gray color on hover */
+  transform: scale(1.1); /* make the text slightly bigger on hover */
 }
