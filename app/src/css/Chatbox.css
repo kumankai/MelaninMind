@@ -1,0 +1,86 @@
+.chat-box {
+    width: 100%;
+    max-height: 500px;
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    position: absolute;
+    top: 0;
+
+    transition: max-height 500ms ease-in-out;
+  }
+  
+  .header {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    cursor: pointer;
+    background-color: #ddd;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    overflow: hidden;
+    min-height: 110px;
+  }
+  
+  .messages {
+    padding: 10px;
+    padding-bottom: 48px;
+    flex: 1;
+    overflow-y: auto;
+  }
+  
+  .message {
+    padding: 5px;
+    margin-bottom: 5px;
+    background-color: #e0e0e0;
+  }
+
+  .collapsed {
+    max-height: 118px;
+    transition: all 500ms ease-in-out;
+    overflow: hidden;
+  }
+  
+.collapsed .message {
+    height: 0px;
+
+    display: hidden;
+
+  }
+  
+  .message-form {
+    display: flex;
+    padding: 10px;
+    background-color: #ddd;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    left: 0;
+    padding: 12px 0 0 0;
+    margin: 0;
+  }
+  
+.chat-contain {
+    display: flex;
+
+}
+
+/* .conversations {
+    width: 128px;
+    
+} */
+
+.conversations > div  {
+    text-overflow: ellipsis;
+    height: 40px;
+    border: 1px solid black;
+    font-size: 14px;
+    white-space: nowrap;
+    width: 200px;
+}
