@@ -1,4 +1,4 @@
-import { useState, React } from 'react';
+import React, { useState, useEffect } from 'react';
 import { CohereClient } from "cohere-ai";
 import Message from './message.js';
 
@@ -19,14 +19,18 @@ function ChatRoom() {
   ];
 
   const [conversation, setConversation] = useState(sampleHistory);
+  const [userInput, setUserInput] = useState('');
+
+  useEffect(() => {
+    initialChat();
+  }, []);
 
   const cohere = new CohereClient({
     token: "CmTSYM5W6eTKpPlGPoLxOYrp9SkIu8qmdNSaKaFJ", // env vars not working...
   });
 
   // Needs to eventually pull last conversation from mongo
-  const initialChat = async (e) => {
-    e.preventDefault();
+  const initialChat = async () => {
       const reply = await cohere.chat({
         message: "You are a chatbot greeting the user. In a friendly and extremely concise way, mention your last conversation together, if there was one.",
         stream: false,
@@ -34,35 +38,33 @@ function ChatRoom() {
         maxTokens: 50,
       });
 
+      updateMessages('CHATBOT', reply.text);
       console.log('prompt is: ', reply, 'chat is: ', reply.text);
   }
+  
+  const updateMessages = (role, message) => {
+    const newConversation = [...conversation, { role: role, message: message }];
+    setConversation(newConversation);
+  };
   
   const userSendChat = async (e) => {
     e.preventDefault();
 
-    const updateMessages = (role, message) => {
-      const newConversation = [...conversation];
-      newConversation.push(
-        {
-          role: role,
-          message: message
-        }
-      );
+    if (!userInput.trim()) return; // Skip if the input is empty or whitespace
 
-      setConversation(newConversation)
-    };
+    updateMessages('USER', userInput);
 
-    const userMessage = e.target.parentElement.querySelector('input').value
     const reply = await cohere.chat({
-      message: userMessage,
+      message: userInput,
       stream: false,
       chatHistory: [],
       maxTokens: 150,
     });
 
-    updateMessages("USER", userMessage);
-    updateMessages("CHATBOT", reply.text);
-  }
+    updateMessages('CHATBOT', reply.text);
+
+    setUserInput(''); // Clear user input after sending the message
+  };
 
   return (
     <div>
@@ -74,9 +76,12 @@ function ChatRoom() {
             <Message key={index} sender={item.role} messageText={item.message} />
           ))}
         </div>
-        <form>
-          <input type='text'></input>
-          <button onClick={userSendChat}>Chat</button>
+        <form onSubmit={userSendChat}>
+          <input
+            type='text'
+            value={userInput}
+            onChange={(e) => setUserInput(e.target.value)}></input>
+          <button type="submit">Chat</button>
         </form>
         
       </div>
