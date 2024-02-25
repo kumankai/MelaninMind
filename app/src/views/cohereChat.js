@@ -90,13 +90,16 @@ function ChatRoom() {
       </div>
       <div className="messages">
         {conversation.map((item, index) => (
-          <Message key={index} sender={item.role} messageText={item.message} />
+          <Message className="message" key={index} sender={item.role} messageText={item.message} />
         ))}
         <div ref={(el) => { el && el.scrollIntoView({ behavior: 'smooth' }); }}></div>
-        <form className='message-form'>
-          <input type='text' placeholder="Type your message..."  ></input>
-          <button onClick={userSendChat}>Send</button>
-        </form>
+        {!collapsed && (
+          <form className='message-form'>
+            <input type='text' placeholder="Type your message..."  ></input>
+            <button onClick={userSendChat}>Send</button>
+          </form>
+        )}
+        
       </div>
     </div>
 

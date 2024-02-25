@@ -6,6 +6,13 @@
     overflow-y: auto;
     display: flex;
     flex-direction: column;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    position: absolute;
+    top: 0;
+
+    transition: max-height 500ms ease-in-out;
   }
   
   .header {
@@ -17,6 +24,8 @@
     position: sticky;
     top: 0;
     z-index: 1;
+    overflow: hidden;
+    min-height: 110px;
   }
   
   .messages {
@@ -30,9 +39,18 @@
     margin-bottom: 5px;
     background-color: #e0e0e0;
   }
+
+  .collapsed {
+    max-height: 118px;
+    transition: all 500ms ease-in-out;
+    overflow: hidden;
+  }
   
-  .collapsed .messages {
-    display: none;
+.collapsed .message {
+    height: 0px;
+    overflow: hidden;
+    display: hidden;
+
   }
   
   .message-form {
@@ -43,7 +61,7 @@
     bottom: 0;
     width: 100%;
     left: 0;
-    padding: 0;
+    padding: 12px 0 0 0;
     margin: 0;
   }
   
