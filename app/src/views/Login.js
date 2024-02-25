@@ -43,6 +43,9 @@ function Login() {
 
     return (
         <div id='loginLog'>
+            <div>
+                <image  alt="" src="/images/melaninlogo.png"></image>
+            </div>
             <h1 className='loginH'>Login</h1>
             <div loginDiv>
                 <form className='formLogF' onSubmit={handleSubmit}>
