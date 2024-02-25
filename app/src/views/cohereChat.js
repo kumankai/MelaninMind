@@ -2,8 +2,24 @@ import { useState, React } from 'react';
 import { CohereClient } from "cohere-ai";
 
 function ChatRoom() {
-  const [conversation, setConversation] = useState([]);
+  const sampleHistory = [
+    {
+      role: "USER",
+      message: "I have mastered python, but I am a rookie in Java."
+    },
+    {
+      role: "USER",
+      message: "What language should I work on today?"
+    },
+    {
+      role: "CHATBOT",
+      message: "Since you have mastered Python, I suggest you work on Java or another language you are less comfortable in."
+    },
+  ];
+
+  const [conversation, setConversation] = useState(sampleHistory);
   
+
 
   const cohere = new CohereClient({
     token: "CmTSYM5W6eTKpPlGPoLxOYrp9SkIu8qmdNSaKaFJ", // env vars not working...
@@ -16,20 +32,7 @@ function ChatRoom() {
         
         message: "You are a chatbot greeting the user. In a friendly and extremely concise way, mention your last conversation together, if there was one.",
         stream: false,
-        chatHistory: [
-          {
-            role: "USER",
-            message: "I have mastered python, but I am a rookie in Java."
-          },
-          {
-            role: "USER",
-            message: "What language should I work on today?"
-          },
-          {
-            role: "CHATBOT",
-            message: "Since you have mastered Python, I suggest you work on Java or another language you are less comfortable in."
-          },
-        ],
+        chatHistory: sampleHistory,
         maxTokens: 50,
       });
 
