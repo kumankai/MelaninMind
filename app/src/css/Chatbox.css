@@ -66,3 +66,21 @@
     margin: 0;
   }
   
+.chat-contain {
+    display: flex;
+
+}
+
+/* .conversations {
+    width: 128px;
+    
+} */
+
+.conversations > div  {
+    text-overflow: ellipsis;
+    height: 40px;
+    border: 1px solid black;
+    font-size: 14px;
+    white-space: nowrap;
+    width: 200px;
+}

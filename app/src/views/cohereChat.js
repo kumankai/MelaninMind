@@ -3,6 +3,7 @@ import { CohereClient } from "cohere-ai";
 import Message from './message.js';
 import '../css/Chatbox.css';
 import '../css/cohereChat.css';
+import Conversation from './Conversation.js';
 
 function ChatRoom() {
   const [collapsed, setCollapsed] = useState(false);
@@ -135,24 +136,41 @@ function ChatRoom() {
     console.log(conversation)
   }
 
+  const selectConversation = (e) => {
+    const selector = e.target.parentElement.getAttribute('class');
+    setConversation(conversations[selector].conversation);
+
+  }
+
   return (
     <div className={`chat-box ${collapsed ? 'collapsed' : ''}`}>
       <div className="header" onClick={toggleCollapse}>
         <h2>Chat</h2>
         <span>{collapsed ? '▼' : '▲'}</span>
       </div>
-      <div className="messages">
-        {conversation.map((item, index) => (
-          <Message className="message" key={index} sender={item.role} messageText={item.message} />
-        ))}
-        <div ref={(el) => { el && el.scrollIntoView({ behavior: 'smooth' }); }}></div>
-        {!collapsed && (
-          <form className='message-form'>
-            <input type='text' placeholder="Type your message..."  ></input>
-            <button onClick={userSendChat}>Send</button>
-          </form>
-        )}
+
+      <div className="chat-contain">
+        <div className='conversations' >
+          {conversations.map((item, index) => (
+            <div onClick={selectConversation} key={index} index={index} className={index} >
+              <Conversation className="conv-tab" conv={item} />
+            </div>
+          ))}
+        </div>
+        <div className="messages">
+          {conversation.map((item, index) => (
+            <Message className="message" key={index} sender={item.role} messageText={item.message} />
+          ))}
+          <div ref={(el) => { el && el.scrollIntoView({ behavior: 'smooth' }); }}></div>
+          {!collapsed && (
+            <form className='message-form'>
+              <input type='text' placeholder="Type your message..."  ></input>
+              <button onClick={userSendChat}>Send</button>
+            </form>
+          )}
+        </div>
       </div>
+
     </div>
 
   );
