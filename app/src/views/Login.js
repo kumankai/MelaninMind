@@ -40,24 +40,22 @@ function Login() {
         }
     };
 
-   
-        return (
+    return (
+        <div>
+            <h1>Login</h1>
             <div>
-                <img alt='logo'> Logo</img>
-                <h1>Login</h1>
-                <div>
-                   <form onSubmit={this.handleSubmit}>
-                        <div>
-                            <label for="email">Email:</label>
-                            <input type="text" id="email" name="email" />
-                        </div>
-                        <div>
-                            <label for="password">Password:</label>
-                            <input type="password" id="password" name="password" />
-                        </div>
-                        <div>
-                            <button type="submit">Login</button>
-                        </div>
+                <form onSubmit={handleSubmit}>
+                    <div>
+                        <label htmlFor="email">Email:</label>
+                        <input type="text" id="email" name="email" />
+                    </div>
+                    <div>
+                        <label htmlFor="password">Password:</label>
+                        <input type="password" id="password" name="password" />
+                    </div>
+                    <div>
+                        <button type="submit">Login</button>
+                    </div>
 
                     <div>
                         <Link to="/views/Signup">Sign Up</Link>
