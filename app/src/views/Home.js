@@ -4,10 +4,9 @@ class HomePage extends Component {
     render() {
         return (
             <div>
-                <h1>Melanin Mindset</h1>
+                <h1>Welcome to ____</h1>
                 <div>
-                    <p>Welcome to the Home Page!</p>
-                    <button onClick={() => console.log('/')}>Home</button>
+                    
                 </div>
             </div>
         );

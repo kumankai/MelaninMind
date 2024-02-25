@@ -8,11 +8,11 @@ class Login extends Component {
                 <div>
                    <form method="post" action>
                         <div>
-                            <label for="email">Email</label>
+                            <label for="email">Email:</label>
                             <input type="text" id="email" name="email" />
                         </div>
                         <div>
-                            <label for="password">Password</label>
+                            <label for="password">Password:</label>
                             <input type="password" id="password" name="password" />
                         </div>
                         <div>
