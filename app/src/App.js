@@ -14,9 +14,10 @@ function App() {
         
        
 
-        <Login/>
+        
 
         <Routes>
+          <Route path="/" element={<Login/>} ></Route>
           <Route path="/home" element={<Home/>} ></Route>
           <Route path="/chat" element={<ChatRoom />} ></Route>
           
