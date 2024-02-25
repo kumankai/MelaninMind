@@ -10,22 +10,76 @@ function ChatRoom() {
     setCollapsed(!collapsed);
   };
 
-  const sampleHistory = [
+  const conversations = [
     {
-      role: "USER",
-      message: "I have mastered python, but I am a rookie in Java."
+      chatId: 1,
+      conversation: [
+        {
+          role: "USER",
+          message: "I'm interested in learning web development. Where should I start?"
+        },
+        {
+          role: "CHATBOT",
+          message: "You can start by learning HTML, CSS, and JavaScript. They are the building blocks of web development."
+        }
+      ]
     },
     {
-      role: "USER",
-      message: "What language should I work on today?"
+      chatId: 2,
+      conversation: [
+        {
+          role: "USER",
+          message: "What are the benefits of using React.js for front-end development?"
+        },
+        {
+          role: "CHATBOT",
+          message: "React.js allows for the creation of interactive user interfaces, improves performance with its virtual DOM, and offers a large ecosystem of libraries and tools."
+        }
+      ]
     },
     {
-      role: "CHATBOT",
-      message: "Since you have mastered Python, I suggest you work on Java or another language you are less comfortable in."
+      chatId: 3,
+      conversation: [
+        {
+          role: "USER",
+          message: "What are some good resources for learning machine learning?"
+        },
+        {
+          role: "CHATBOT",
+          message: "You can check out online courses on platforms like Coursera and Udacity, as well as books such as 'Hands-On Machine Learning with Scikit-Learn, Keras, and TensorFlow.'"
+        }
+      ]
     },
+    {
+      chatId: 4,
+      conversation: [
+        {
+          role: "USER",
+          message: "I'm having trouble understanding recursion. Can you explain it to me?"
+        },
+        {
+          role: "CHATBOT",
+          message: "Recursion is a programming technique where a function calls itself to solve smaller instances of the same problem. It's often used in algorithms involving trees, graphs, and mathematical calculations."
+        }
+      ]
+    },
+    {
+      chatId: 5,
+      conversation: [
+        {
+          role: "USER",
+          message: "What programming language should I learn if I want to build mobile apps?"
+        },
+        {
+          role: "CHATBOT",
+          message: "For mobile app development, you can learn languages like Java or Kotlin for Android development, and Swift for iOS development. Alternatively, you can use frameworks like React Native or Flutter for cross-platform development."
+        }
+      ]
+    }
   ];
+  
 
-  const [conversation, setConversation] = useState(sampleHistory);
+  const [conversation, setConversation] = useState(conversations[0].conversation);
 
   const cohere = new CohereClient({
     token: "CmTSYM5W6eTKpPlGPoLxOYrp9SkIu8qmdNSaKaFJ", // env vars not working...
@@ -37,7 +91,7 @@ function ChatRoom() {
       const reply = await cohere.chat({
         message: "You are a chatbot greeting the user. In a friendly and extremely concise way, mention your last conversation together, if there was one.",
         stream: false,
-        chatHistory: sampleHistory,
+        chatHistory: conversations[0].conversation,
         maxTokens: 50,
       });
 
